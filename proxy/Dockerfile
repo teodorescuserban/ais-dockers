@@ -9,8 +9,12 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN mkdir -p /etc/service/squid
-ADD run_squid /etc/service/squid/run
+ADD run /etc/service/squid/
 RUN chmod u+x /etc/service/squid/run
+
+ADD squid.conf /etc/squid3/
+ADD list_zone_ok /etc/squid3/
+ADD list_domenii_ok /etc/squid3/
 
 EXPOSE 3128
 
